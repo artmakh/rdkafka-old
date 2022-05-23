@@ -1,6 +1,6 @@
 [package]
 name = "rdkafka-sys"
-version = "4.1.1"
+version = "4.1.2"
 authors = ["Federico Giraud <giraud.federico@gmail.com>"]
 build = "build.rs"
 links = "rdkafka"
@@ -47,14 +47,14 @@ dynamic-linking = []
 dynamic_linking = ["dynamic-linking"]
 
 # Enable SSL support.
-ssl = ["openssl-sys"]
+ssl = ["openssl-sys/vendored"]
 
 # Build and link against the version of OpenSSL bundled with the openssl-sys
 # crate.
 ssl-vendored = ["ssl", "openssl-sys/vendored"]
 
 # Enable SASL GSSAPI support with Cyrus libsasl2.
-gssapi = ["ssl", "sasl2-sys"]
+gssapi = ["ssl", "sasl2-sys/vendored"]
 
 # Build and link against the libsasl2 bundled with the sasl2-sys crate.
 gssapi-vendored = ["gssapi", "sasl2-sys/gssapi-vendored"]
